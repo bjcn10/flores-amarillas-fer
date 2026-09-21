@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5ead4">
+  <meta name="description" content="Una pequeña historia hecha con flores amarillas para Fer.">
+  <title>Para Fer — Flores Amarillas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;600i&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <div class="film-grain" aria-hidden="true"></div>
+  <div id="petals" aria-hidden="true"></div>
+  <div id="stars" aria-hidden="true"></div>
+  <audio id="song" src="assets/cancion.mp3" preload="auto" loop></audio>
+
+  <button id="musicToggle" class="music-toggle" aria-label="Activar o pausar la canción" title="Activar o pausar la canción">
+    <span class="music-icon">♪</span><span>música</span>
+  </button>
+
+  <div class="progress" aria-hidden="true">
+    <span id="progressBar"></span>
+  </div>
+
+  <!-- 01 — Entrada -->
+  <section class="scene active" id="intro">
+    <div class="intro-copy">
+      <span class="eyebrow">21 de septiembre · flores amarillas</span>
+      <h1>Hay cosas<br>que comienzan<br><em>pequeñas.</em></h1>
+      <p class="intro-sub">Y algunas terminan convirtiéndose en algo muy bonito.</p>
+    </div>
+
+    <button id="sunflower" class="sunflower-button" aria-label="Tocar el girasol para comenzar">
+      <span class="sunflower">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <b></b>
+      </span>
+      <span class="tap-label">toca aquí</span>
+    </button>
+  </section>
+
+  <!-- 02 — Crecimiento -->
+  <section class="scene" id="growth">
+    <div class="growth-copy">
+      <span class="eyebrow">Todo empieza con una semilla</span>
+      <p id="growthLine">Ten paciencia...</p>
+    </div>
+    <div class="tree-stage">
+      <svg class="tree" viewBox="0 0 900 700" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+        <defs>
+          <filter id="goldGlow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <path class="trunk main-trunk" d="M450 700 C445 610 448 520 450 430 C451 335 460 255 450 185"/>
+        <path class="branch br1" d="M450 480 C395 410 335 355 275 312"/>
+        <path class="branch br2" d="M452 440 C505 380 558 330 632 285"/>
+        <path class="branch br3" d="M450 360 C405 312 365 260 328 215"/>
+        <path class="branch br4" d="M453 328 C505 272 548 230 586 180"/>
+        <path class="branch br5" d="M449 278 C420 238 400 205 395 158"/>
+        <g id="flowers" filter="url(#goldGlow)"></g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 03 — Corazón -->
+  <section class="scene" id="heart">
+    <div class="heart-message">
+      <span class="eyebrow">Y entonces...</span>
+      <h2>Todo<br>floreció.</h2>
+      <p>Porque algunas historias merecen tener flores.</p>
+      <button id="openLetter" class="round-button">Tengo algo que decirte</button>
+    </div>
+  </section>
+
+  <!-- 04 — Foto + carta -->
+  <section class="scene" id="letterScene">
+    <div class="letter-layout">
+      <div class="photo-column">
+        <div class="photo-card">
+          <div class="photo-shine"></div>
+          <img src="assets/fer.jpeg" alt="Fer sonriendo" class="portrait">
+        </div>
+        <p class="photo-note">la sonrisa que siempre quiero volver a ver</p>
+      </div>
+
+      <div class="letter-column">
+        <button id="letterToggle" class="letter-tab">Abrir la carta <span>↓</span></button>
+        <article id="letter" class="letter">
+          <div class="letter-inner">
+            <span class="eyebrow">Para Feeeeer</span>
+            <h2>212 días<br><em>contigo.</em></h2>
+            <div id="message" class="message"></div>
+            <button id="closeLetter" class="close-letter">Cerrar la carta</button>
+            <button id="continueMemories" class="continue-button">Continuar con la historia →</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 — Recuerdos -->
+  <section class="scene" id="memories">
+    <div class="memories-inner">
+      <span class="eyebrow">Lo que me llevo de nosotros</span>
+      <h2>No son solo<br><em>los días.</em></h2>
+      <div class="memory-list">
+        <div><b>01</b><span>Las conversaciones que terminan haciéndonos entendernos mejor.</span></div>
+        <div><b>02</b><span>Las pequeñas cosas que, sin darnos cuenta, se convierten en recuerdos.</span></div>
+        <div><b>03</b><span>Los momentos difíciles que aprendimos a atravesar juntos.</span></div>
+        <div><b>04</b><span>Y todas esas veces en las que simplemente me alegra que seas tú.</span></div>
+      </div>
+      <button id="toFinal" class="round-button">Hay una última cosa...</button>
+    </div>
+  </section>
+
+  <!-- 06 — Final -->
+  <section class="scene" id="final">
+    <div class="final-content">
+      <div class="final-flower">🌻</div>
+      <span class="eyebrow">Feliz Día de las Flores Amarillas</span>
+      <h2>Y si pudiera<br>elegir de nuevo...</h2>
+      <p class="final-line">✨ Te volvería a elegir a ti. ✨</p>
+      <p class="love">Te burda amo muchísimo, Fer.</p>
+      <p class="days">212 días contigo</p>
+      <button id="restart" class="restart">volver a empezar</button>
+    </div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
